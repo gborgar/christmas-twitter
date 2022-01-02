@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+  <div class="col-sm-4">
+    <h4>Register</h4>
+    <form action="/register" method="POST">
+    
+    <div class="input-group mb-1">
+      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+      <input type="text" class="form-control {{#if errors.username}}is-invalid{{/if}}" name="username" value="{{ user.username }}" placeholder="petersmith..." />
+      <div class="invalid-feedback">{{ errors.username }}</div>
+    </div>
+
+    <div class="input-group mb-1">
+      <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+      <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" name="password" placeholder="Password..." />
+      <div class="invalid-feedback">{{ errors.password }}</div>
+    </div>
+   
+   <div class="input-group mb-1">
+      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+      <input type="url" class="form-control {{#if errors.avatarUrl}}is-invalid{{/if}}" name="avatarUrl" value="{{ user.avatarUrl }}" placeholder="http://example.com" />
+      <div class="invalid-feedback">{{ errors.avatarUrl }}</div>
+    </div>
+
+    <div class="input-group mb-1">
+      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+      <textarea name="bio" rows="5" cols="40"></textarea>
+      <div class="invalid-feedback">{{ errors.bio }}</div>
+    </div>
+
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary btn-sm text-uppercase">Register</button>
+      <hr>
+      <a href="/login" class="btn btn-secondary btn-sm text-uppercase">Login</a>
+    </div>
+    
+
+    </form>
+  </div>
+</div>
