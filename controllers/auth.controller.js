@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const createError = require('http-errors');
 const User = require('../models/user.model');
-const e = require('express');
 
 module.exports.register = (req, res, next) => {
   res.render('auth/register')
@@ -10,7 +8,6 @@ module.exports.register = (req, res, next) => {
 module.exports.doRegister = (req, res, next) => {
 
   function renderWithErrors(errors) {
-    console.log("errors:: ", errors);
     res.render('auth/register', {
       errors: errors,
       user: req.body
@@ -23,7 +20,6 @@ module.exports.doRegister = (req, res, next) => {
         return User.create(req.body)
         .then(user => res.redirect('/login'))
       } else {
-        console.log("entra qui con errors:: ");
         renderWithErrors({ username: 'username already exists' });
       }
     })
@@ -61,8 +57,7 @@ module.exports.doLogin = (req, res, next) => {
               renderWithErrors();
             } else {
               req.session.userId = user.id;
-              console.log(req.session);
-              res.redirect('/post');
+              res.redirect('/posts');
             }
           })
       } 

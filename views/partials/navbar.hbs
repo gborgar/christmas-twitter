@@ -9,13 +9,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
         {{#if currentUser}}
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/contacts">Contacts</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/contacts/create"><i class="fa fa-plus"></i></a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/posts">Posts</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/posts/new"><i class="fa fa-plus"></i></a></li>
         {{/if}}
         </ul>
       <ul class="navbar-nav">
         {{#if currentUser}}
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">{{ currentUser.email }}</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/profile">{{ currentUser.username }}</a></li>
           <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout"><i class="fa fa-sign-out"></i></a></li>
         {{else}}
           <li class="nav-item"><a class="nav-link" aria-current="page" href="/register">Register</a></li>
