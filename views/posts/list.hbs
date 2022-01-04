@@ -8,15 +8,17 @@
               <small>{{ post.text }}</small>
             </div>
           </div>
-          <div class="d-flex justify-content-around mb-3">
-            <div class="p-2">@Author</div>
-            <div class="p-2">
+          <div class="d-flex justify-content-around">
+            <div class="p2"><small>{{ post.author.username }}</small></div>
+            <div class="ml-auto p2">
                <form action="/posts/{{post.id}}/like" method="post">
                 <button type="submit" class="btn btn-light"><i class="fa fa-thumbs-up"></i></button>
+                <small>{{ post.likes }}</small>
               </form>
             </div>
           </div>
         {{/each}}
       </div>
   </div>
+  
 </div>

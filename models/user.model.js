@@ -17,8 +17,8 @@ const userSchema = new Schema({
     match: [PASSWORD_PATTERN, 'password needs at least 8 chars']
   },
   avatarUrl: {
-    type: String
-
+    type: String,
+    default: 'patata'
   },
   bio: {
     type: String

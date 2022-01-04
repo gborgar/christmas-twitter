@@ -18,6 +18,8 @@ app.set("views", `${__dirname}/views`);
 app.set("view engine", "hbs");
 
 
+
+
 /** Session configuration */
 
 /** Middlewares */
@@ -25,6 +27,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(session);
 app.use(loadUser);
+
+app.use(express.static(`${__dirname}/public`));
 
 /** Routes */
 const routes = require("./config/routes.config");

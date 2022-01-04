@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../controllers/auth.controller");
-const misc = require("../controllers/misc.controller");
 const post = require("../controllers/post.controller");
 const secure = require("../middlewares/secure.mid");
+const profile = require("../controllers/profile.controller");
 
-router.get("/", misc.home);
+router.get("/", secure.isAuthenticated, post.list);
+
+router.get("/profile", secure.isAuthenticated, profile.profile);
 
 router.get("/posts/new", secure.isAuthenticated, post.newPost);
 router.post("/posts", secure.isAuthenticated, post.doNewPost);

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Post = require("../models/post.model");
 
 module.exports.list = (req, res, next) => {
-  Post.find({ author: req.user.id })
+  Post.find().populate("author")
     .then((posts) => res.render("posts/list", { posts }))
     .catch((error) => next(error));
 };
@@ -29,8 +29,8 @@ module.exports.doNewPost = (req, res, next) => {
       }
     });
 };
+
 module.exports.doLike = (req, res, next) => {
-	console.log("id:: ", req.params.id);
 	Post.findByIdAndUpdate(req.params.id, { $inc: { likes: 1} })
 			.then((post) => {
 				if (post) {

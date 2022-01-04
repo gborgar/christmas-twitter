@@ -56,6 +56,7 @@ module.exports.doLogin = (req, res, next) => {
             if (!match) {
               renderWithErrors();
             } else {
+              console.log("psasa por aqui");
               req.session.userId = user.id;
               res.redirect('/posts');
             }

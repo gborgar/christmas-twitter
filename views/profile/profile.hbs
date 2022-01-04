@@ -1,0 +1,15 @@
+    <div class="d-flex justify-content-center mb-3">
+         {{#if user.avatarUrl }}
+          <img src="{{user.avatarUrl}}" class="rounded-circle" alt="Responsive image">
+        {{else}}
+          <img src="/images/default-avatar.jpg" class="rounded-circle" alt="Responsive image">
+        {{/if}}
+    </div>
+
+    <div class="d-flex justify-content-center mb-2">
+        <p class="text-justify">{{user.bio}}</p>
+    </div>
+
+    <div class="d-flex justify-content-center mb-2">
+        <a class="btn btn-primary btn-sm text-uppercase" href="/posts">Home</a>
+    </div>
