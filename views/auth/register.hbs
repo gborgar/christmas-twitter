@@ -16,13 +16,13 @@
     </div>
    
    <div class="input-group mb-1">
-      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+      <span class="input-group-text"><i class="fa fa-camera-retro fa-fw"></i></span>
       <input type="url" class="form-control {{#if errors.avatarUrl}}is-invalid{{/if}}" name="avatarUrl" value="{{ user.avatarUrl }}" placeholder="http://example.com" />
       <div class="invalid-feedback">{{ errors.avatarUrl }}</div>
     </div>
 
-    <div class="input-group mb-1">
-      <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+    <div class="input-group mb-2">
+      <span class="input-group-text"><i class="fa fa-pen-alt fa-fw"></i></span>
       <textarea name="bio" rows="5" cols="40"></textarea>
       <div class="invalid-feedback">{{ errors.bio }}</div>
     </div>
